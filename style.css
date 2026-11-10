@@ -1,0 +1,105 @@
+:root {
+  /* ===== CHANGE COLORS HERE ===== */
+  --bg: #fff0f5;        /* page background */
+  --ink: #2d1028;       /* normal text */
+  --primary: #5b1a6e;   /* dark boxes, buttons, headline */
+  --accent: #ffc93c;    /* promo bar, badge, shadows */
+  --pop: #ff4f8b;       /* highlights, hover, "season" word */
+  --art1: #7a2a8f;      /* hero art gradient (light) */
+  --art2: #3a0f4a;      /* hero art gradient (dark) */
+  --fruit1: #ff7aa8;    /* fruit slice segments */
+  --fruit2: #ffe3ee;    /* fruit slice gaps */
+  --line: rgba(45, 16, 40, 0.18);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --mono: "DM Mono", ui-monospace, monospace;
+  --sans: "DM Sans", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { background: var(--bg); color: var(--ink); font-family: var(--sans); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; color: inherit; }
+:focus-visible { outline: 2px solid var(--pop); outline-offset: 3px; }
+
+.layout { display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+
+/* Sidebar */
+.sidebar { position: sticky; top: 0; height: 100vh; display: flex; flex-direction: column; border-right: 1px solid var(--line); padding: 0 32px 24px; }
+.brand { padding: 36px 0 28px; border-bottom: 1px solid var(--line); }
+.logo { font-family: var(--serif); font-weight: 500; font-size: 3rem; color: var(--primary); letter-spacing: -0.02em; line-height: 1; }
+.tagline { margin-top: 16px; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.7; }
+.nav { display: flex; flex-direction: column; gap: 16px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.nav-link { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; display: flex; gap: 14px; }
+.nav-link:hover { color: var(--pop); }
+.nav-num { opacity: 0.5; }
+.shop-all { display: flex; justify-content: space-between; padding: 22px 0; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--line); }
+.side-quote { margin-top: 28px; padding-left: 14px; border-left: 2px solid var(--pop); font-family: var(--serif); font-style: italic; font-size: 1.55rem; line-height: 1.25; color: var(--primary); }
+.side-quote cite { display: block; margin-top: 18px; font-family: var(--mono); font-style: normal; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--ink); opacity: 0.7; }
+.bag { margin-top: auto; display: flex; justify-content: space-between; padding: 18px 0 0; background: none; border: 0; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Promo bar */
+.promo-bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; background: var(--accent); padding: 14px 32px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.promo-code { display: flex; align-items: center; gap: 12px; }
+.code-chip { background: transparent; border: 1px dashed var(--primary); padding: 6px 16px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.05fr 1fr; min-height: calc(100vh - 46px); }
+.hero-copy { padding: 56px 48px 120px; }
+.eyebrow { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
+.eyebrow::before { content: ""; width: 8px; height: 8px; background: var(--accent); }
+.headline { margin-top: 28px; font-family: var(--serif); font-weight: 400; font-size: clamp(3rem, 6vw, 5.4rem); line-height: 1.02; letter-spacing: -0.02em; color: var(--primary); }
+.headline em { font-weight: 500; color: var(--pop); }
+.lede { margin-top: 28px; max-width: 34ch; line-height: 1.7; font-size: 0.95rem; opacity: 0.8; }
+.cta-row { display: flex; align-items: center; gap: 32px; margin-top: 36px; }
+.btn { background: var(--primary); color: var(--bg); padding: 20px 32px; font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.btn:hover { background: var(--pop); }
+.link { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.coupon { margin-top: 40px; max-width: 520px; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px; background: var(--primary); color: var(--bg); box-shadow: 8px 8px 0 var(--accent); }
+.coupon-kicker { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+.coupon-big { margin-top: 10px; font-family: var(--serif); font-size: 2rem; line-height: 1.1; }
+.coupon-big em { color: var(--accent); font-size: 2.4rem; }
+.coupon-code { display: flex; flex-direction: column; gap: 6px; text-align: left; background: transparent; border: 1px dashed rgba(255, 255, 255, 0.6); outline: 3px solid var(--pop); outline-offset: 3px; padding: 14px 18px; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.1em; }
+.coupon-code span { color: var(--accent); font-size: 0.62rem; text-transform: uppercase; }
+
+.countdown { margin-top: 36px; }
+.count-label { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pop); }
+.count-row { display: flex; gap: 14px; margin-top: 14px; }
+.count-box { width: 84px; padding: 14px 0 10px; text-align: center; background: var(--primary); color: var(--accent); box-shadow: 5px 5px 0 var(--accent); }
+.count-box strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 2.2rem; line-height: 1; }
+.count-box span { display: block; margin-top: 8px; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg); opacity: 0.8; }
+.fine { margin-top: 24px; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.6; }
+
+/* Art panel (pure CSS, no image files needed) */
+.hero-art { position: relative; overflow: hidden; background: radial-gradient(circle at 30% 20%, var(--art1), var(--art2) 70%); min-height: 520px; }
+.citrus { position: absolute; left: 12%; bottom: 14%; width: 260px; aspect-ratio: 1; border-radius: 50%; border: 14px solid var(--pop); background: repeating-conic-gradient(from 0deg, var(--fruit1) 0 26deg, var(--fruit2) 26deg 30deg); box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4); }
+.glass { position: absolute; right: 14%; bottom: 14%; width: 150px; height: 250px; clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%); background: rgba(255, 255, 255, 0.18); display: flex; align-items: flex-end; }
+.juice { width: 100%; height: 78%; background: linear-gradient(var(--fruit1), var(--pop)); }
+.badge { position: absolute; top: 8%; right: 8%; width: 230px; padding: 24px; background: var(--accent); color: var(--primary); box-shadow: 8px 8px 0 var(--pop); z-index: 2; }
+.badge small { display: block; font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.badge p { margin: 16px 0; font-family: var(--serif); font-size: 1.8rem; }
+.badge em { font-size: 2.6rem; }
+.art-caption { position: absolute; left: 0; right: 0; bottom: 0; padding: 16px 24px; background: rgba(0, 0, 0, 0.35); color: var(--bg); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* Cookies */
+.cookies { position: fixed; left: 324px; right: 24px; bottom: 16px; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 20px 24px; background: var(--bg); border: 1px solid var(--line); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); z-index: 10; }
+.cookies strong { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.cookies p { margin-top: 6px; font-size: 0.78rem; opacity: 0.75; }
+.cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
+.cookie-actions button { background: none; border: 1px solid var(--ink); padding: 10px 16px; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.cookie-actions button:hover { background: var(--primary); color: var(--bg); }
+
+/* Responsive */
+@media (max-width: 960px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .side-quote, .bag { display: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { padding: 40px 24px 80px; }
+  .cookies { left: 12px; right: 12px; flex-direction: column; align-items: flex-start; }
+  .promo-bar { flex-direction: column; align-items: flex-start; padding: 14px 24px; }
+}
+@media (max-width: 520px) {
+  .coupon { flex-direction: column; align-items: flex-start; }
+  .count-box { width: 70px; }
+  .cta-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
